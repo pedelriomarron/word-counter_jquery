@@ -1,0 +1,102 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Courier Prime', monospace;
+
+}
+
+body {
+    min-width: 185px;
+  
+  
+  }
+
+#main{
+    width: 100%;
+}
+
+#box{
+width: 70%;
+float: left;
+padding: 2%;
+text-align: center;
+
+}
+
+#clearText{
+ margin: 1.5%;
+}
+
+#results{
+    width: 30%;
+    float: left;
+    padding: 2%;  
+}
+
+.result{
+    margin: 1%;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.15rem; /* em unit */
+    border-radius: 4%;
+    text-align: center;
+    background: #1779baa6;
+    color: #fefefe;
+    margin: 1%;
+}
+
+
+#main button{
+    border: 1px solid black;
+    background: white;
+    border-radius: 15px;
+    background-color: lightskyblue;
+    padding: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    box-shadow: 0 9px #999;
+    outline: none;
+  
+  }
+  
+  #main button:hover{
+    background: rgb(85, 138, 172);
+    cursor: pointer;
+  
+  }
+  
+  #main button:active {
+    box-shadow: 0px 4px 3px #aaaaaa;
+    transform: translateY(4px);
+  }
+
+
+  #version{
+    padding: 3rem;
+    clear: both;
+    text-align: center;
+  }
+  
+
+  @media (max-width: 520px) {
+    #box{
+        width: 100%;
+    }
+    #results{
+        width: 100%;
+    }
+  }
+
+  textarea {
+
+    background-color: #fbfafa;
+  }
+
+  .page {
+    background-color: #fffef5;
+    background-image: url("https://www.transparenttextures.com/patterns/cream-paper.png");
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+    }
