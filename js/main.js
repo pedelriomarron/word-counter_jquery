@@ -74,22 +74,30 @@ const createResults = () => {
 
 const getDataforText = (text) => {
     text = text.replace(/ +(?= )/g, '').trim();
-
+    let sentences = text.replace(/([.?!])\s*(?=[A-Z])/g, "$1|").split("|");
+    let sentencesNum = sentences.length
     let characters = text.split('').filter(c => c != ' ').length;
-    let words = text.split(' ').filter(c => c != ' ');
+    let words = []
+    sentences.map(sentence => {
+        sentence = sentence.replace(/[\n\r]/g, ' ');
+        let w = sentence.split(' ')
+        words = words.concat(w)
+    })
     let wordsNum = words.length
+
     let repetition = {}
     words.map(word => {
         word = removeSpecialChar(word).replace(/(^\.+|\.+$)/mg, '');
         if (typeof repetition[word] === 'undefined') repetition[word] = 0
         repetition[word]++
     })
-    let sentences = text.replace(/([.?!])\s*(?=[A-Z])/g, "$1|").split("|");
-    let sentencesNum = sentences.length
+
     repetition = Object.entries(repetition)
     repetition.sort((a, b) => (a[1] < b[1]) ? 1 : -1)
-
-
+    // console.log(text)
+    // console.log(repetition)
+    // console.log(sentences)
+    // console.log(words)
     if (characters === 0) {
         wordsNum = 0
         sentencesNum = 0
